@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
 </head>
-<body>
-    <header><h1>Bienvenido al organizador de prioridad</h1></header>
-    <main>
-        <form action="taskValue">
-            <!--Estimador de prioridad-->
-        </form>
 
-        <form action="addTask">
+<body>
+    <header>
+        <h1>Bienvenido al organizador de prioridad</h1>
+    </header>
+    <main>
+        
             <!-- Imput del nombre de la tarea a cargar-->
-            <input type="text" name="task" id="taskImput">
+            <input type="text" name="task" id="taskImput" />
+            <br>
+            <br>
+            <input type="text" name="Num Cliente" id="numeroCliente" placeholder="Ingrese el código de cliente">
+            <input type="text" name="Num Cliente" id="nombreCliente" placeholder="Ingrese el nómbre del clinete">
+            <label for="cliente">Seleccione el cliente</label>
+            <select name="clientes" id="clientes" >{{nombreCliente}}</select>
+            <br>
+            <button id="btnAgregar">Agregar</button>
+            <button id="btnLimpiar">Limpiar</button>
+            <button id="btnMostrar">Mostrar seleccionado</button>
+            <br>
+            <br>
+            <label for="fechaEntrega">Fecha entrega:</label>
+            <input type="date" id="fechaEntrega" name="fechaEntrega" value="" min="2023-01-01"  />
+
             <!--Preguntas para establecer prioridad-->
-            <div class="preguntas"></div>
+            <div class="preguntas">
+                <div class="pregunta">
+                    <input type="checkbox" id="usoCompleto?" name="emergencia" value="10" />
+                    <label for="emergencia">¿Impide el uso total de la app?</label>
+                </div>
+                <div class="pregunta">
+                    <input type="checkbox" id="legal" name="legal" value="5" />
+                    <label for="legal">¿Puede generar problemas legales tanto al cliente como a la empresa?</label>
+                </div>
+                <div class="pregunta">
+                    <input type="checkbox" id="modulos" name="modulos" value="1" />
+                    <label for="modulos">¿Impide el acceso o el uso a un determinado modulo?</label>
+                </div>
+                <div class="pregunta">
+                    <input type="checkbox" id="liquidacion" name="liquidacion" value="8" />
+                    <label for="liquidacion">¿Impide o afecta al modulo de liquidación?</label>
+                </div>
+            </div>
             <!--BOtones de agregar y limpiar form-->
-            <button type="submit">Agregar</button>
+            <button type="submit">Estimar Prioridad</button>
             <button type="reset">Resetear</button>
-        </form>
+        
         <section>
             <!--Listado de tareas ordenado por prioridad-->
-
         </section>
     </main>
 
     <script src="prog.js"></script>
 </body>
+
 </html>
